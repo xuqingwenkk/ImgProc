@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "opencv2/core/core.hpp"
 #include "opencv2/highgui/highgui.hpp"
@@ -9,8 +10,8 @@ using namespace cv;
 
 int main(int argc, char ** argv)
 {
-  Mat imgl = imread("../data/image1.jpg", IMREAD_GRAYSCALE);
-  Mat imgr = imread("../data/image2.jpg", IMREAD_GRAYSCALE);
+  Mat imgl = imread("../data/imgl.jpg", IMREAD_GRAYSCALE);
+  Mat imgr = imread("../data/imgr.jpg", IMREAD_GRAYSCALE);
   
   Mat imgDisparity16S = Mat(imgl.rows, imgl.cols, CV_16S);
   Mat imgDisparity8U = Mat(imgl.rows, imgl.cols, CV_8UC1);
@@ -24,10 +25,11 @@ int main(int argc, char ** argv)
   int ndisparities = 16 * 5;
   int SADWindowSize = 21;
   
-  //Ptr<StereoBM> sbm = StereoBM::create(ndisparities, SADWindowSize);
-  StereoBM sbm(CV_STEREO_BM_BASIC, ndisparities, SADWindowSize);
+  Ptr<StereoBM> sbm = StereoBM::create(ndisparities, SADWindowSize);
+  //StereoSGBM sbm(CV_STEREO_BM_BASIC, ndisparities, SADWindowSize);
   
   sbm.operator()(imgl, imgr, imgDisparity16S, CV_16S);
+  //sbm.operator()(imgl, imgr, imgDisparity16S);
   
   double minVal, maxVal;
   
@@ -39,9 +41,10 @@ int main(int argc, char ** argv)
   namedWindow("display disparity image", WINDOW_NORMAL);
   imshow("display disparity image", imgDisparity8U);
   
-  imwrite("../data/disparity.jpg", imgDisparity8U);
+  imwrite("../data/disparity.png", imgDisparity8U);
   
   waitKey(0);
   return 0;
   
 }
+
