@@ -115,6 +115,20 @@ Parallax/fast:
 	cd /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build && $(MAKE) -f src/CMakeFiles/Parallax.dir/build.make src/CMakeFiles/Parallax.dir/build
 .PHONY : Parallax/fast
 
+# Convenience name for target.
+src/CMakeFiles/ParallaxFisheye.dir/rule:
+	cd /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/ParallaxFisheye.dir/rule
+.PHONY : src/CMakeFiles/ParallaxFisheye.dir/rule
+
+# Convenience name for target.
+ParallaxFisheye: src/CMakeFiles/ParallaxFisheye.dir/rule
+.PHONY : ParallaxFisheye
+
+# fast build rule for target.
+ParallaxFisheye/fast:
+	cd /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build && $(MAKE) -f src/CMakeFiles/ParallaxFisheye.dir/build.make src/CMakeFiles/ParallaxFisheye.dir/build
+.PHONY : ParallaxFisheye/fast
+
 parallax.o: parallax.cpp.o
 .PHONY : parallax.o
 
@@ -139,6 +153,30 @@ parallax.cpp.s:
 	cd /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build && $(MAKE) -f src/CMakeFiles/Parallax.dir/build.make src/CMakeFiles/Parallax.dir/parallax.cpp.s
 .PHONY : parallax.cpp.s
 
+parallax_fisheye.o: parallax_fisheye.cpp.o
+.PHONY : parallax_fisheye.o
+
+# target to build an object file
+parallax_fisheye.cpp.o:
+	cd /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build && $(MAKE) -f src/CMakeFiles/ParallaxFisheye.dir/build.make src/CMakeFiles/ParallaxFisheye.dir/parallax_fisheye.cpp.o
+.PHONY : parallax_fisheye.cpp.o
+
+parallax_fisheye.i: parallax_fisheye.cpp.i
+.PHONY : parallax_fisheye.i
+
+# target to preprocess a source file
+parallax_fisheye.cpp.i:
+	cd /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build && $(MAKE) -f src/CMakeFiles/ParallaxFisheye.dir/build.make src/CMakeFiles/ParallaxFisheye.dir/parallax_fisheye.cpp.i
+.PHONY : parallax_fisheye.cpp.i
+
+parallax_fisheye.s: parallax_fisheye.cpp.s
+.PHONY : parallax_fisheye.s
+
+# target to generate assembly for a file
+parallax_fisheye.cpp.s:
+	cd /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build && $(MAKE) -f src/CMakeFiles/ParallaxFisheye.dir/build.make src/CMakeFiles/ParallaxFisheye.dir/parallax_fisheye.cpp.s
+.PHONY : parallax_fisheye.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -146,11 +184,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... Parallax"
+	@echo "... ParallaxFisheye"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... parallax.o"
 	@echo "... parallax.i"
 	@echo "... parallax.s"
+	@echo "... parallax_fisheye.o"
+	@echo "... parallax_fisheye.i"
+	@echo "... parallax_fisheye.s"
 .PHONY : help
 
 

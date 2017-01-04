@@ -25,8 +25,9 @@ int main(int argc, char ** argv)
   int ndisparities = 16 * 5;
   int SADWindowSize = 21;
   
-  Ptr<StereoBM> sbm = StereoBM::create(ndisparities, SADWindowSize);
+  //Ptr<StereoBM> sbm = StereoBM::create(ndisparities, SADWindowSize);  //opencv3.0
   //StereoSGBM sbm(CV_STEREO_BM_BASIC, ndisparities, SADWindowSize);
+  StereoBM sbm(CV_STEREO_BM_BASIC, ndisparities, SADWindowSize);
   
   sbm.operator()(imgl, imgr, imgDisparity16S, CV_16S);
   //sbm.operator()(imgl, imgr, imgDisparity16S);
@@ -34,7 +35,7 @@ int main(int argc, char ** argv)
   double minVal, maxVal;
   
   minMaxLoc(imgDisparity16S, &minVal, &maxVal);
-  cout << "Min disp is " << minVal << " Max disp is " << maxVal << endl;
+  //cout << "Min disp is " << minVal << " Max disp is " << maxVal << endl;
   imgDisparity16S.convertTo(imgDisparity8U, CV_8UC1, 255/(maxVal - minVal));
   
   
@@ -42,6 +43,8 @@ int main(int argc, char ** argv)
   imshow("display disparity image", imgDisparity8U);
   
   imwrite("../data/disparity.png", imgDisparity8U);
+  
+  cout << "imgDisparity8U = [" << imgDisparity8U << " ]; " << endl;
   
   waitKey(0);
   return 0;

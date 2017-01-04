@@ -1,0 +1,2 @@
+ndisparities=80
+SADWindowSize=21

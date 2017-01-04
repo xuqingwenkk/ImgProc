@@ -1,1 +1,2 @@
 /home/robotqw/MyGit/pri_repo/ImgProc/parallax/build/src/CMakeFiles/Parallax.dir
+/home/robotqw/MyGit/pri_repo/ImgProc/parallax/build/src/CMakeFiles/ParallaxFisheye.dir

@@ -114,6 +114,19 @@ Parallax/fast:
 	$(MAKE) -f src/CMakeFiles/Parallax.dir/build.make src/CMakeFiles/Parallax.dir/build
 .PHONY : Parallax/fast
 
+#=============================================================================
+# Target rules for targets named ParallaxFisheye
+
+# Build rule for target.
+ParallaxFisheye: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ParallaxFisheye
+.PHONY : ParallaxFisheye
+
+# fast build rule for target.
+ParallaxFisheye/fast:
+	$(MAKE) -f src/CMakeFiles/ParallaxFisheye.dir/build.make src/CMakeFiles/ParallaxFisheye.dir/build
+.PHONY : ParallaxFisheye/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -123,6 +136,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Parallax"
+	@echo "... ParallaxFisheye"
 .PHONY : help
 
 
