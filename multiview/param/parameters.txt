@@ -1,0 +1,24 @@
+#This is for options
+
+#w
+perspwidth=800
+#h
+perspheight=600
+#s
+fishtheta=180
+#t
+persptheta=120
+
+x_value=0
+y_value=0
+z_value=0
+#a
+antialias=1
+#c
+fishcenterx=-1
+fishcentery=-1
+#r
+fishradius=-1
+
+#image
+image=./image.jpg
